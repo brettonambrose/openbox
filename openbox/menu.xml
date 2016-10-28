@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Run...">
+			<action name="Execute">
+				<execute>gmrun</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" id="applications" label="Applications"/>
+		<menu id="settings" label="Settings">
+			<menu id="openbox-settings" label="Openbox">
+				<item label="Autostart">
+					<action name="Execute">
+						<execute>xfce4-terminal -e &quot;nano ~/.config/openbox/autostart&quot;</execute>
+					</action>
+				</item>
+				<item label="Change Background...">
+					<action name="Execute">
+						<execute>nitrogen</execute>
+					</action>
+				</item>
+				<item label="Compositor Settings">
+					<action name="Execute">
+						<execute>xfce4-terminal -e &quot;nano ~/.compton.conf&quot;</execute>
+					</action>
+				</item>
+				<item label="Menu Editor">
+					<action name="Execute">
+						<execute>obmenu</execute>
+					</action>
+				</item>
+				<item label="Panel Settings">
+					<action name="Execute">
+						<execute>tint2conf</execute>
+					</action>
+				</item>
+				<item label="Runtime Configuration">
+					<action name="Execute">
+						<execute>xfce4-terminal -e &quot;nano ~/.config/openbox/rc.xml&quot;</execute>
+					</action>
+				</item>
+				<item label="Window Manager Settings">
+					<action name="Execute">
+						<execute>obconf</execute>
+					</action>
+				</item>
+				<separator/>
+				<item label="Restart Openbox">
+					<action name="Restart"/>
+				</item>
+				<item label="Exit Openbox...">
+					<action name="Exit">
+						<execute>command</execute>
+					</action>
+				</item>
+			</menu>
+			<separator/>
+			<item label="Display Manager (lightdm)">
+				<action name="Execute">
+					<execute>gksudo lightdm-gtk-greeter-settings</execute>
+				</action>
+			</item>
+			<item label="GTK Appearance">
+				<action name="Execute">
+					<execute>lxappearance</execute>
+				</action>
+			</item>
+			<item label="GTK Appearance (root)">
+				<action name="Execute">
+					<execute>gksudo lxappearance</execute>
+				</action>
+			</item>
+			<item label="HP Toolbox">
+				<action name="Execute">
+					<execute>hp-toolbox -u</execute>
+				</action>
+			</item>
+			<item label="Keyboard and Mouse">
+				<action name="Execute">
+					<execute>lxinput</execute>
+				</action>
+			</item>
+			<item label="Network Connections">
+				<action name="Execute">
+					<execute>nm-connection-editor</execute>
+				</action>
+			</item>
+			<item label="Printers (CUPS Web)">
+				<action name="Execute">
+					<execute>xfce4-terminal -e &quot;lynx localhost:631&quot;</execute>
+				</action>
+			</item>
+			<item label="Power Management">
+				<action name="Execute">
+					<execute>xfce4-power-manager-settings</execute>
+				</action>
+			</item>
+			<item label="Scanner (xsane)">
+				<action name="Execute">
+					<execute>xsane</execute>
+				</action>
+			</item>
+			<item label="Screen Resolution">
+				<action name="Execute">
+					<execute>lxrandr</execute>
+				</action>
+			</item>
+			<item label="Sound (Pulseaudio)">
+				<action name="Execute">
+					<execute>pavucontrol</execute>
+				</action>
+			</item>
+			<item label="Thunar Settings">
+				<action name="Execute">
+					<execute>thunar-settings</execute>
+				</action>
+			</item>
+			<item label="Wine Configuration">
+				<action name="Execute">
+					<execute>winecfg</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="system" label="System">
+			<item label="Disk Cleanup">
+				<action name="Execute">
+					<execute>bleachbit</execute>
+				</action>
+			</item>
+			<item label="Disk Usage">
+				<action name="Execute">
+					<execute>baobab</execute>
+				</action>
+			</item>
+			<item label="Package Manager (tkPacman gui)">
+				<action name="Execute">
+					<execute>gksudo tkpacman</execute>
+				</action>
+			</item>
+			<item label="Task Manager">
+				<action name="Execute">
+					<execute>xfce4-terminal -e htop</execute>
+				</action>
+			</item>
+			<item label="Thunar File Manager (root)">
+				<action name="Execute">
+					<execute>gksudo thunar</execute>
+				</action>
+			</item>
+			<item label="Update Repositories...">
+				<action name="Execute">
+					<execute>xfce4-terminal -e &quot;sudo pacman -u&quot;</execute>
+				</action>
+			</item>
+			<item label="Software Upgrade">
+				<action name="Execute">
+					<execute>xfce4-terminal -e &quot;sudo pacman -Syyu&quot;</execute>
+				</action>
+			</item>
+			<item label="Wireshark">
+				<action name="Execute">
+					<execute>gksudo wireshark-gtk</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<item label="Help">
+			<action name="Execute">
+				<execute>chromium https://wiki.archlinux.org/</execute>
+			</action>
+		</item>
+		<separator/>
+		<item label="Leave...">
+			<action name="Execute">
+				<prompt>yes</prompt>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

@@ -1,0 +1,9 @@
+nitrogen --restore &
+compton -b &
+thunar --daemon &
+tint2 &
+(sleep 1 && xfce4-power-manager) &
+(sleep 2 && nm-applet) &
+(sleep 3 && volumeicon) &
+
+
